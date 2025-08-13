@@ -2,6 +2,9 @@
   "routes": [
     {
       "src": "/main\\.lua",
+      "has": [
+        { "type": "header", "key": "user-agent", "value": ".*(Mozilla|Chrome|Safari|Edge).*" }
+      ],
       "status": 403
     }
   ]

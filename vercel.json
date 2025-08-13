@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/main\\.lua",
+      "status": 403
+    }
+  ]
+}

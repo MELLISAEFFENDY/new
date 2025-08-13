@@ -1,11 +1,24 @@
 {
   "routes": [
     {
-      "src": "/main\\.lua",
+      "src": "/(.*)",
+      "headers": {
+        "Content-Type": "text/plain"
+      },
+      "methods": ["GET"],
       "has": [
-        { "type": "header", "key": "user-agent", "value": ".*(Mozilla|Chrome|Safari|Edge).*" }
+        {
+          "type": "header",
+          "key": "User-Agent",
+          "value": "Roblox.*"
+        }
       ],
-      "status": 403
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "status": 403,
+      "dest": "/403.txt"
     }
   ]
 }
